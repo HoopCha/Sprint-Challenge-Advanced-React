@@ -3,11 +3,13 @@ import './App.css';
 import axios from 'axios';
 import styled from 'styled-components';
 
+import Navbar from './Navbar';
 import PlayerCard from './components/PlayerCard';
 
 const Cards = styled.div`
 display: flex;
 flex-wrap: wrap;
+justify-content:center;
 `;
 
 class App extends React.Component {
@@ -30,8 +32,13 @@ componentDidMount(){
     .catch(err => console.log('error'));
   }
 
+
+
+
 render(){
   return (
+<div>
+  <Navbar />
   <Cards>
  {this.state.players.map(player =>{
       return (
@@ -44,6 +51,7 @@ render(){
       )
       })}
   </Cards>
+  </div>
   )
 }}
 export default App;
