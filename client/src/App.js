@@ -24,7 +24,6 @@ componentDidMount(){
   axios
     .get('http://localhost:5000/api/players')
     .then((response) => {
-      console.log('data:', response.data)
       this.setState({
         players: response.data
       })
